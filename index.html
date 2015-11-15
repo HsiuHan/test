@@ -295,6 +295,11 @@ button {
 	padding:16px 31px;
 	text-decoration:none;
 }
+
+
+.highlight {background-color:#000;color:#ccc}
+.highlight a {background-color:#000;color:#ccc}
+
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -365,7 +370,13 @@ button {
 		timer = setTimeout(autoClick, speed);
 	});
 	
-	
+
+var menu=new slideMenu('vertical_menu');
+	menu.handler='onclick';
+	menu.autoexpand=true;
+	menu.currentClass='highlight';
+	menu.init();
+
 
 </script>
 
@@ -394,6 +405,63 @@ ul.nav a { zoom: 1; }  /* zoom 屬性可為 IE 提供修正連結之間多餘空
       <li><a href="#">連結三</a></li>
       <li><a href="#">連結四</a></li>
     </ul>
+    <div id="vertical_menu">
+	<ol>
+		<li><span>Main 1</span>
+			<ul class="collapsed">
+				<li><a href="menu.html">Link 1</a></li>
+				<li><a href="1.html">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+				<li><a href="#">Link 4</a></li>
+				<li><a href="#">Link 5</a></li>
+			</ul>
+		</li>
+		<li><span>Main 2</span>
+			<ul class="collapsed">
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+				<li><a href="#">Link 4</a></li>
+				<li><a href="#">Link 5</a></li>
+			</ul>
+		</li>
+		<li><span>Main 3</span>
+			<ul class="collapsed">
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+				<li><a href="#">Link 4</a></li>
+			</ul>
+		</li>
+		<li><span>Main 4</span>
+			<ul class="collapsed">
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+				<li><a href="#">Link 4</a></li>
+				<li><a href="#">Link 5</a></li>
+				<li><a href="#">Link 6</a></li>
+			</ul>
+		</li>
+		<li><span>Main 5</span>
+			<ul class="collapsed">
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+				<li><a href="#">Link 4</a></li>
+			</ul>
+		</li>
+		<li><span>Main 6</span>
+			<ul class="collapsed">
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+				<li><a href="#">Link 4</a></li>
+			</ul>
+		</li>
+	</ol>
+</div>
+
     <p> 以上的連結示範基本的導覽結構，此結構使用以 CSS 設定樣式的項目清單。請以此做為起點，然後修改屬性來產生您獨有的外觀。如果需要飛出選單，請使用 a Spry menu、menu widget from Adobe's Exchange 或多種其他的 Javascript 或 CSS 解決方案自行建立。</p>
     <p>如果想要將導覽列於頂端，只需將 ul.nav 移到頁面頂端，然後重新建立樣式設定即可。</p>
   <!-- end .sidebar1 --></div>
