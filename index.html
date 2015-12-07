@@ -1,19 +1,15 @@
-<!doctype html>
-<html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- TemplateBeginEditable name="doctitle" -->
-
-<link href="slidemenu.css" rel="stylesheet" />
-<script src="slidemenu.js" type="text/javascript"></script>
-
 <title>無標題文件</title>
+<link rel="stylesheet" type="text/css" href="https://rawgit.com/Semantic-Org/Semantic-UI/master/dist/semantic.min.css">
 <!-- TemplateEndEditable -->
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-
 <style type="text/css">
 <!--
 body {
@@ -33,108 +29,36 @@ h1, h2, h3, h4, h5, h6, p {
 	margin-top: 0;	 /* 移除上方邊界可以解決邊界可能從其包含的 Div 逸出的問題。剩餘的下方邊界可以保持 Div 不與接在後面的元素接觸。 */
 	padding-right: 15px;
 	padding-left: 15px; /* 將欄位間隔加入至 Div 內元素的兩側 (而不是 Div 本身)，即可不需執行任何方塊模型的計算作業。具有側邊欄位間隔的巢狀 Div 也可當做替代方法。 */
+	text-align: center;
+	font-size: 100%;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
-
-h1,h2{
-	font-family: 微軟正黑體; 
-	font-weight: 500; 
-	line-height: 30px; 
-	margin-top: 20px; 
-	margin-left:20px;
-	margin-bottom: 29px; 
-}
-
-h1{font-size: 32px;}
-h2{font-size: 20px;
-	font-color:#666;
-	text-indent :2em; }
-
 a img { /* 這個選取器會移除某些瀏覽器在影像由連結所圍繞時，影像周圍所顯示的預設藍色邊框 */
 	border: none;
 }
 
-/* ~~ 網站連結的樣式設定必須保持此順序，包括建立滑過 (Hover) 效果的選取器群組在內。~~ */
-a:link {
-	color:#CCC;
-	text-decoration: underline; /* 除非您要設定非常獨特的連結樣式，否則最好提供底線，以便快速看出 */
-}
-a:visited {
-	color: #ccc;
-	text-decoration: underline; 
-}
-a:hover, a:active, a:focus { /* 這個選取器群組可以讓使用鍵盤導覽的使用者，也和使用滑鼠的使用者一樣擁有相同的滑過體驗。 */
-	text-decoration: none;
-}
 
 /* ~~ 這個容器環繞著所有其他的 Div，並依百分比設定其寬度 ~~ */
 .container {
-	width: 100%;
+	width: 80%;
 	max-width: 1260px;/* 建議您使用最大寬度，如此版面在大型螢幕上就不致於過寬，讓行保持比較方便閱讀的長度。IE6 並不適用這項宣告。 */
 	min-width: 780px;/* 建議您使用最小寬度，如此版面在大型螢幕上就不致於過窄，讓行在側欄中保持比較方便閱讀的長度。IE6 並不適用這項宣告。 */
 	background-color: #FFF;
 	margin: 0 auto; /* 兩側的自動值與寬度結合後，版面便會置中對齊。如果將 .container 的寬度設為 100%，就不需要這麼做。 */
 }
 
-/* ~~ 頁首沒有指定的寬度，而會橫跨版面的整個寬度。頁首包含影像預留位置，必須由您自己的連結商標加以取代 ~~ */
-.header {
-	background-color: #FF3;
-}
+/* ~~ 這是版面資訊。~~ 
 
-/* ~~ 這是版面的欄位。~~ 
-
-1) 欄位間隔只會置於 Div 的頂端或底部。這些 Div 內的元素在兩側會有欄位間隔，可讓您不需進行「方塊模型計算」。請記住，如果對 Div 本身加入任何側邊的欄位間隔或邊框，在計算「總」寬度時，就會將這些加入您定義的寬度。您也可以選擇移除 Div 中元素的欄位間隔，然後在其中放置沒有寬度的第二個 Div，並依設計所需放置欄位間隔。
-
-2) 尚未為這些欄位提供邊界，因為它們全都是浮動的。如果必須加入邊界，請避免將其放在浮動方向的一側 (例如將右邊界放在設定為向右浮動的 Div 上)。在許多時候，您都可以改用欄位間隔。對於必須違反此規則的 Div，您應該在 Div 的規則中加入 "display:inline" 宣告，以防止某些版本的 Internet Explorer 將邊界加倍。
-
-3) 因為可在文件中多次使用類別 (也可對單一的元素套用多個類別)，所以已為欄位指定類別名稱，而非 ID。例如，您可在必要時將兩個側邊列 Div 堆疊起來。如有需要，也可以將這些名稱輕鬆地變更為 ID (只要您在每份文件中只使用一次)。
-
-4) 如果想要將導覽放在右方而非左方，只要將這些欄設定為往反方向浮動 (全部往右，而非全部往左)，它們就會以相反順序呈現。您不需要在 HTML 原始碼中移動 Div。
+1) 欄位間隔只會置於 Div 的頂端或底部。此 Div 內的元素在兩側會有欄位間隔，可讓您不需進行「方塊模型計算」。請記住，如果對 Div 本身加入任何側邊的欄位間隔或邊框，在計算「總」寬度時，就會將這些加入您定義的寬度。您也可以選擇移除 Div 中元素的欄位間隔，然後在其中放置沒有寬度的第二個 Div，並依設計所需放置欄位間隔。
 
 */
-.sidebar1 {
-	float: left;
-	width: 20%;
-	background-color: #FFF;
-	color:#F60
-	padding-bottom: 10px;
-}
 .content {
 	padding: 10px 0;
-	width: 80%;
-	float: left;
 }
 
 /* ~~ 這個群組選取器會在 .content 區域空間中提供清單 ~~ */
 .content ul, .content ol { 
 	padding: 0 15px 15px 40px; /* 這個欄位間隔反映出上方標題和段落規則中的右方間隔。當欄位間隔位於下方時，便可將清單中的其他元素間隔開來；當位於左方時，則可藉此建立縮排。這些動作均可依需要進行調整。 */
-}
-
-/* ~~ 導覽清單樣式 (如果選擇使用 Spry 之類的預製飛出選單，則可移除) ~~ */
-ul.nav {
-	list-style: none; /* 這會移除清單標記 */
-	border-top: 1px solid #FFF; /* 這會建立連結的上方邊框，其他則都會使用下方邊框放置在 LI 上 */
-	margin-bottom: 15px; /* 這會在下方的內容上建立導覽間的間距 */
-}
-ul.nav li {
-	border-bottom: 1px solid #FFF; /* 這會建立按鈕分隔 */
-}
-ul.nav a, ul.nav a:visited { /* 將這些選取器放入群組，即可確保您的連結即使在受到點擊後仍保有按鈕外觀 */
-	padding: 5px 5px 5px 15px;
-	display: block; /* 這會為連結提供區塊屬性，使連結能填滿包含它的整個 LI，讓整個區域都能回應滑鼠點按動作。 */
-	text-decoration: none;
-	background-color: #fc0; 
-	color: #000;
-}
-ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* 這會同時變更滑鼠及鍵盤導覽器的背景及文字顏色 */
-	color: #F30;
-}
-
-/* ~~ 頁尾 ~~ */
-.footer {
-	padding: 10px 0;
-	background-color: #6F7D94;
-	position: relative;/* 這會為 IE6 提供 hasLayout 以進行適當的清除動作 */
-	clear: both; /* 這個 clear 屬性可以強制 .container 辨識欄結束於何處以及包含欄的位置 */
 }
 
 /* ~~ 其他 float/clear 類別 ~~ */
@@ -146,7 +70,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* 這會同時變更滑鼠及
 	float: left;
 	margin-right: 8px;
 }
-.clearfloat { /* 這個類別可放置在 <br /> 或空白的 Div 上，當做接在 #container 內最後一個浮動 Div 後方的最後一個元素 (如果從 #container 移除或取出 #footer) */
+.clearfloat { /* 這個類別可放置在 <br /> 或空白的 Div 上，當做接在 #container 內最後一個浮動 Div 後方的最後一個元素 (如果已移除 .container 上的 overflow:hidden) */
 	clear:both;
 	height:0;
 	font-size: 1px;
@@ -154,481 +78,210 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* 這會同時變更滑鼠及
 }
 -->
 
-/*圖片淡出*/
-	a img {
-		border: none;
-	}
-	#abgne_fade_pic {
-		position: relative;
-		width: 700px;
-		height: 300px;
-		padding-left:40px;
-		padding-top:40px;
-	}
-	#abgne_fade_pic a.ad {
-		position: absolute;	/* 讓圖片疊在一起 */
-	}
-	#abgne_fade_pic .control {
-		position: absolute;
-		right: 300px;
-		bottom: 10px;
-	}
-	#abgne_fade_pic .control a {
-		display: inline-block;
-		padding: 3px;
-		margin: 0 3px;
-		width: 16px;
-		color: #fff;
-		background: #CCC;
-		text-align: center;
-		font-size: 16px;
-		text-decoration: none;
-	}
-	#abgne_fade_pic .control a.on {
-		color: #F60;
+#intro{
+	width: 500px;
+	position:auto;
+	margin: 0px auto;
 	}
 	
-#farmer1{
+#sell img{
 	float:left;
-	position:relative;
-	margin-left:40px;
-	margin-top:40px;
+	padding-left:100px;
+	padding-right:50px;
 	}
 	
-#introduce{
-	float:left;
-	width:500px;
-	font-family:微軟正黑體;
-	padding-top:40px;
-	padding-left:40px;
-	}
-.ca1{
-	box-sizing: border-box; 
-	width: 100px; 
-	height: 25px; 
-	padding: 5px 15px 30px 5px; 
-	text-align: left; 
-	float: left; 
-	margin-left: 1px; 
-	margin-bottom: 2px; 
-	font-size: 15px; 
-	color: #836c4d; 
-	line-height: 26px; 
-	border-bottom-style: dotted; 
-	border-bottom-width: 1px; 
-	border-bottom-color: #b6b6b6; 
-	border-top-left-radius: 0px; 
-	border-top-right-radius: 0px; 
-	border-bottom-right-radius: 0px; 
-	border-bottom-left-radius: 0px;
-	}
+	/* -------------------- Page Styles (not required) */
+div { margin: 20px; }
 
-.ca2{ 
-	box-sizing: border-box; 
-	width: 400px; 
-	height: 25px; 
-	padding: 5px 15px 30px 5px; 
-	text-align: left; 
-	float: left; 
-	margin-left: 1px; 
-	margin-bottom: 2px; 
-	font-size: 15px; 
-	color: #836c4d; 
-	line-height: 26px; 
-	border-bottom-style: dotted; 
-	border-bottom-width: 1px; 
-	border-bottom-color: #b6b6b6; 
-	border-top-left-radius: 0px; 
-	border-top-right-radius: 0px;
-	border-bottom-right-radius: 0px; 
-	border-bottom-left-radius: 0px;
-	}
-	
-#buy{
-	 clear:left; 
-	 margin-top:40px;
-	 margin-left:40px;
-	 padding-top:100px;
+/* -------------------- Select Box Styles: bavotasan.com Method (with special adaptations by ericrasch.com) */
+/* -------------------- Source: http://bavotasan.com/2011/style-select-box-using-only-css/ */
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 240px;
 }
 
-#buy{
-	clear:left;
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+   
 }
 
-.mango1 {
-	float:left;
-	width:300px;
+.styled-select.slate {
+   background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+   height: 34px;
+   width: 240px;
 }
 
-.mango2{
-	width:300px;
-	float:left;
+.styled-select.slate select {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   width: 268px;
 }
 
-
-
-ul{list-style: none; margin: 0; padding: 0;}
-.buymango1{background: #FFF;font:14px/26px Microsoft Yahei, Helvetica,arial; margin: 0; max-width: 200px;}
-.buymango1-1{background: #FFF;}
-.buybutton ul{font-size: 0; *word-spacing: -1px;letter-spacing: -5px;}
-.buybutton li{margin-bottom: 26px; letter-spacing: normal;}
-.buybutton {display: inline-block; *display: inline; *zoom:1; width: 100%; vertical-align: top; letter-spacing: normal; word-spacing: normal; font-size: 14px;}
-@media screen and (-webkit-min-device-pixel-ratio:0){
-.choose{height:40px;background:#fff url(img/icons.png) no-repeat right -24px;
-color: #a1a1a1; font-size: 16px;
-border:1px solid #E4E4E4;cursor:pointer;position:relative;_filter:alpha(opacity=0);
-}
-.choose label{padding-left:10px;font-size:16px;z-index:2; color: #a1a1a1; line-height: 40px; height: 40px; display: block;}
-.choose .select{width:100%; height:40px; line-height:40px; z-index:4;position:absolute;top:0;left:0;margin:0;padding:0;opacity:0; *margin-top:12px; filter:alpha(opacity=0);cursor:pointer; font-size: 16px;}
-
-
-.nothing{
-	clear:left;
+/* -------------------- Rounded Corners */
+.rounded {
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
 }
 
-button {
-	background-color:#fff;
-	-moz-border-radius:24px;
-	-webkit-border-radius:24px;
-	border-radius:24px;
-	border:0px solid #ffffff;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:16px 31px;
-	text-decoration:none;
+.semi-square {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
+/* -------------------- Colors: Background */
+.slate   { background-color: #ddd; }
+.green   { background-color: #779126; }
+.blue    { background-color: #3b8ec2; }
+.yellow  { background-color: #eec111; }
+.black   { background-color: #000; }
+
+/* -------------------- Colors: Text */
+.slate select   { color: #000; }
+.green select   { color: #fff; }
+.blue select    { color: #fff; }
+.yellow select  { color: #000; }
+.black select   { color: #fff; }
+
+
+/* -------------------- Select Box Styles: danielneumann.com Method */
+/* -------------------- Source: http://danielneumann.com/blog/how-to-style-dropdown-with-css-only/ */
+#mainselection select {
+   border: 0;
+   color: #EEE;
+   background: transparent;
+   font-size: 20px;
+   font-weight: bold;
+   padding: 2px 10px;
+   width: 378px;
+   *width: 350px;
+   *background: #58B14C;
+   -webkit-appearance: none;
+}
+
+#mainselection {
+   overflow:hidden;
+   width:350px;
+   -moz-border-radius: 9px 9px 9px 9px;
+   -webkit-border-radius: 9px 9px 9px 9px;
+   border-radius: 9px 9px 9px 9px;
+   box-shadow: 1px 1px 11px #330033;
+   background: #58B14C url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
 }
 
 
-.highlight {background-color:#000;color:#ccc}
-.highlight a {background-color:#000;color:#ccc}
+/* -------------------- Select Box Styles: stackoverflow.com Method */
+/* -------------------- Source: http://stackoverflow.com/a/5809186 */
+select#soflow, select#soflow-color {
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   margin: 20px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 300px;
+}
 
-</style>
-<script type="text/javascript">
-	$(function(){
-		var $block = $('#abgne_fade_pic'), 
-			$ad = $block.find('.ad'),
-			showIndex = 0,			// 預設要先顯示那一張
-			fadeOutSpeed = 2000,	// 淡出的速度
-			fadeInSpeed = 3000,		// 淡入的速度
-			defaultZ = 10,			// 預設的 z-index
-			isHover = false,
-			timer, speed = 2000;	// 計時器及輪播切換的速度
-		
-		// 先把其它圖片的變成透明
-		$ad.css({
-			opacity: 0,
-			zIndex: defaultZ - 1
-		}).eq(showIndex).css({
-			opacity: 1,
-			zIndex: defaultZ
-		});
-		
-		// 組出右下的按鈕
-		var str = '';
-		for(var i=0;i<$ad.length;i++){
-			str += '<a href="#">' + (i + 1) + '</a>';
-		}
-		var $controlA = $('#abgne_fade_pic').append($('<div class="control">' + str + '</div>').css('zIndex', defaultZ + 1)).find('.control a');
+select#soflow-color {
+   color: #fff;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#779126, #779126 40%, #779126);
+   background-color: #779126;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   padding-left: 15px;
+}
 
-		// 當按鈕被點選時
-		// 若要變成滑鼠滑入來切換時, 可以把 click 換成 mouseover
-		$controlA.click(function(){
-			// 取得目前點擊的號碼
-			showIndex = $(this).text() * 1 - 1;
-			
-			// 顯示相對應的區域並把其它區域變成透明
-			$ad.eq(showIndex).stop().fadeTo(fadeInSpeed, 1, function(){
-				if(!isHover){
-					// 啟動計時器
-					timer = setTimeout(autoClick, speed + fadeInSpeed);
-				}
-			}).css('zIndex', defaultZ).siblings('a').stop().fadeTo(fadeOutSpeed, 0).css('zIndex', defaultZ - 1);
-			// 讓 a 加上 .on
-			$(this).addClass('on').siblings().removeClass('on');
 
-			return false;
-		}).focus(function(){
-			$(this).blur();
-		}).eq(showIndex).addClass('on');
 
-		$block.hover(function(){
-			isHover = true;
-			// 停止計時器
-			clearTimeout(timer);
-		}, function(){
-			isHover = false;
-			// 啟動計時器
-			timer = setTimeout(autoClick, speed);
-		})
-		
-		// 自動點擊下一個
-		function autoClick(){
-			if(isHover) return;
-			showIndex = (showIndex + 1) % $controlA.length;
-			$controlA.eq(showIndex).click();
-		}
-		
-		// 啟動計時器
-		timer = setTimeout(autoClick, speed);
-	});
+.styled-select1 {   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 240px;
+}
+.styled-select1 {   background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+   height: 34px;
+   width: 240px;
+}
+
+.photo img{ float:left;
+			padding-left:50px;
+			padding-right:30px;
+			}
+#cart{
+	clear:left
+	margin:0 auto;
+	padding-top:100px;}
+.button{
+	margin-top:100px;
+	margin-left:50%;}
 	
 
-var menu=new slideMenu('vertical_menu');
-	menu.handler='onclick';
-	menu.autoexpand=true;
-	menu.currentClass='highlight';
-	menu.init();
-
-
-</script>
-
-    
- 
-<!--[if lte IE 7]>
-<style>
-.content { margin-right: -1px; } /* 這個 1 像素的負邊界可放在此版面中的任何欄上，而具有相同的修正效果。 */
-ul.nav a { zoom: 1; }  /* zoom 屬性可為 IE 提供修正連結之間多餘空白時所需的 hasLayout 觸發。 */
-</style>
-<![endif]-->
-
-
-</head>
+</style></head>
 
 <body>
 
 <div class="container">
-  <div class="header"><a href="#"><img src="" alt="在這裡插入商標" name="Insert_logo" width="20%" height="90" id="Insert_logo" style="background-color: #FFFF33; display: block;" /></a> 
-    <!-- end .header --></div>
-  <div class="sidebar1">
-  <p><br><br><br><P><P>
-      <ul class="nav">
-      <li><a href="#">連結一</a></li>
-      <li><a href="#">連結二</a></li>
-      <li><a href="#">連結三</a></li>
-      <li><a href="#">連結四</a></li>
-    </ul>
-    <div id="vertical_menu">
-	<ol>
-		<li><span>Main 1</span>
-			<ul class="collapsed">
-				<li><a href="menu.html">Link 1</a></li>
-				<li><a href="1.html">Link 2</a></li>
-				<li><a href="#">Link 3</a></li>
-				<li><a href="#">Link 4</a></li>
-				<li><a href="#">Link 5</a></li>
-			</ul>
-		</li>
-		<li><span>Main 2</span>
-			<ul class="collapsed">
-				<li><a href="#">Link 1</a></li>
-				<li><a href="#">Link 2</a></li>
-				<li><a href="#">Link 3</a></li>
-				<li><a href="#">Link 4</a></li>
-				<li><a href="#">Link 5</a></li>
-			</ul>
-		</li>
-		<li><span>Main 3</span>
-			<ul class="collapsed">
-				<li><a href="#">Link 1</a></li>
-				<li><a href="#">Link 2</a></li>
-				<li><a href="#">Link 3</a></li>
-				<li><a href="#">Link 4</a></li>
-			</ul>
-		</li>
-		<li><span>Main 4</span>
-			<ul class="collapsed">
-				<li><a href="#">Link 1</a></li>
-				<li><a href="#">Link 2</a></li>
-				<li><a href="#">Link 3</a></li>
-				<li><a href="#">Link 4</a></li>
-				<li><a href="#">Link 5</a></li>
-				<li><a href="#">Link 6</a></li>
-			</ul>
-		</li>
-		<li><span>Main 5</span>
-			<ul class="collapsed">
-				<li><a href="#">Link 1</a></li>
-				<li><a href="#">Link 2</a></li>
-				<li><a href="#">Link 3</a></li>
-				<li><a href="#">Link 4</a></li>
-			</ul>
-		</li>
-		<li><span>Main 6</span>
-			<ul class="collapsed">
-				<li><a href="#">Link 1</a></li>
-				<li><a href="#">Link 2</a></li>
-				<li><a href="#">Link 3</a></li>
-				<li><a href="#">Link 4</a></li>
-			</ul>
-		</li>
-	</ol>
-</div>
-
-    <p> 以上的連結示範基本的導覽結構，此結構使用以 CSS 設定樣式的項目清單。請以此做為起點，然後修改屬性來產生您獨有的外觀。如果需要飛出選單，請使用 a Spry menu、menu widget from Adobe's Exchange 或多種其他的 Javascript 或 CSS 解決方案自行建立。</p>
-    <p>如果想要將導覽列於頂端，只需將 ul.nav 移到頁面頂端，然後重新建立樣式設定即可。</p>
-  <!-- end .sidebar1 --></div>
-  
 <div class="content">
- 	
-   
-  <div id="abgne_fade_pic">
-		<a href="http://abgne.tw" class="ad"><img src="https://c2.staticflickr.com/6/5659/22585537456_2137b83116_b.jpg" /></a>
-		<a href="http://tw.yahoo.com" class="ad"><img src="https://c2.staticflickr.com/6/5672/21988774814_bd0f9e4ceb_b.jpg" /></a>
-		<a href="http://www.google.com" class="ad"><img src="https://c2.staticflickr.com/6/5636/22485604210_6f57b42447_b.jpg" /></a>
-	</div>
-    <h1>張小豪ㄟ檨仔</h1>
-	<h2>來自玉井，用心栽培，30年栽種經驗，堅持使用有機肥料，</h2>
-    <img id="farmer1" src="https://c2.staticflickr.com/6/5773/22615540292_acd6d387fa.jpg">
-    
-    <div id="introduce">
-    	<ul style="list-style-type: none">
-    	<li class="ca1"><b>農夫</b></li>
-		<li class="ca2">張小豪(虛擬人物XD)</li>
-		<li class="ca1"><b>栽種經驗</b></li>
-		<li class="ca2">30年</li>
-		<li class="ca1"><b>產　地</b></li>
-		<li class="ca2">玉井層林</li>
-        <li class="ca1"><b>品　種</b></li>
-		<li class="ca2">愛文、西施</li>
-        <li class="ca1"><b>保存方法</b></li>
-		<li class="ca2">購買後可置於常溫環境，等待芒果表層出現一層蠟、開始變軟後再置入冰箱。從冰箱裡拿出來後請立即食用，就可以享受到冰冰涼涼、酸酸甜甜好滋味喔</li></ul>
-        
-    </div>
-    
-    <div id="buy">
-    	<div class="mango1">                                   		                                
-                <a href="" class="" style="display:block;height:200px" >
-        		<img src="https://c1.staticflickr.com/1/745/22609178736_e64bdfa918_m.jpg" 
-            	width="200px" onmouseover="src='https://c1.staticflickr.com/1/745/22609178736_e64bdfa918_m.jpg'" 
-            	onmouseout="src='https://c1.staticflickr.com/1/745/22609178736_e64bdfa918_m.jpg'" 
-            	alt="愛文芒果" class="img-rounded">
-         	 	</a>
-          			<div>
-            		<h3 class="title1">愛文芒果</h3>
-            		<p class="bdff-picul-index" style="height:79px;">
-           			讓我再想想要寫什麼</p>
-            		<br>	
-                    </div>
-                    
-            		<section class="buymango1">
-							<div class="buymango1-1">
-							<ul>
-								<li class="buybutton">
-								<div class="choose">
-								<label>請選擇規格</label>
-								<select class="select" name="" id="">
-								<option value="0">12粒裝 (大)</option>
-								<option value="1">16粒裝 (中)</option>
-								<option value="2">20粒裝 (普通)</option>
-								</select>
-								</div>
-								</li>
-							<br>
-								<li class="buytton">
-								<div class="choose">
-								<label>請選擇數量</label>
-								<select class="select" name="" id="">
-								<option value="1" selected="selected" >1</option>                         
-                                <option value="2"  >2</option>                          
-                                <option value="3"  >3</option>                           
-                                <option value="4"  >4</option>                            
-                                <option value="5"  >5</option>
-                                <option value="6"  >6</option>
-                                <option value="7"  >7</option>
-                                <option value="8"  >8</option>
-                                <option value="9"  >9</option>
-                                <option value="10"  >10</option>
-                                <option value="11"  >11</option>
-                                <option value="12"  >12</option>
-                                <option value="13"  >13</option>
-                                <option value="14"  >14</option>
-                                <option value="15"  >15</option>
-                                <option value="16"  >16</option>
-                                <option value="17"  >17</option>
-                                <option value="18"  >18</option>
-                                <option value="19"  >19</option>
-                                <option value="20"  >20</option>  
-                                </select>                    
-								</div>
-								</li>
-							</ul>
-							</div>
-		  </section>
-	  </div>  <!-- mango1-->  
-                  
-    	 <div class="mango2">
-                <a href="" class="" style="display:block;height:200px" >
-        		<img src="https://c2.staticflickr.com/6/5823/22609178286_363e7ec0e0_m.jpg" 
-            	width="200px" onmouseover="src='https://c2.staticflickr.com/6/5823/22609178286_363e7ec0e0_m.jpg'" 
-            	onmouseout="src='https://c2.staticflickr.com/6/5823/22609178286_363e7ec0e0_m.jpg'" 
-            	alt="西施芒果" class="img-rounded">
-         	 	</a>
-          			<div>
-            		<h3 class="title1">西施芒果</h3>
-            		<p class="bdff-picul-index" style="height:79px;">
-           			讓我再想想要寫什麼</p>
-                    </div>
-                    <br>
-            		<section class="buymango1">
-							<div class="buymango1-1">
-							<ul>
-								<li class="buybutton">
-								<div class="choose">
-								<label>請選擇規格</label>
-								<select class="select" name="" id="">
-								<option value="0">12粒裝 (大)</option>
-								<option value="1">16粒裝 (中)</option>
-								<option value="2">20粒裝 (普通)</option>
-								</select>
-								</div>
-								</li>
-							<br>
-								<li class="buytton">
-								<div class="choose">
-								<label>請選擇數量</label>
-								<select class="select" name="" id="">
-								<option value="1" selected="selected" >1</option>                         
-                                <option value="2"  >2</option>                          
-                                <option value="3"  >3</option>                           
-                                <option value="4"  >4</option>                            
-                                <option value="5"  >5</option>
-                                <option value="6"  >6</option>
-                                <option value="7"  >7</option>
-                                <option value="8"  >8</option>
-                                <option value="9"  >9</option>
-                                <option value="10"  >10</option>
-                                <option value="11"  >11</option>
-                                <option value="12"  >12</option>
-                                <option value="13"  >13</option>
-                                <option value="14"  >14</option>
-                                <option value="15"  >15</option>
-                                <option value="16"  >16</option>
-                                <option value="17"  >17</option>
-                                <option value="18"  >18</option>
-                                <option value="19"  >19</option>
-                                <option value="20"  >20</option>  
-                                </select>                    
-								</div>
-								</li>
-							</ul>
-							</div>
-		   </section>
-	  </div>  <!-- mango2-->    
-    </div> <!--buy-->
-              
-              
-    <div class="nothing">  
-    <button><img src="https://c1.staticflickr.com/1/725/22040589094_6e8dd9c033.jpg" onmouseover="src='https://c2.staticflickr.com/6/5791/22042199713_e85af96b4f.jpg'" 
-            	onmouseout="src='https://c1.staticflickr.com/1/725/22040589094_6e8dd9c033.jpg'">
-    </button>            
+    <h1><img src="https://c1.staticflickr.com/1/664/23267697440_363d88e412_b.jpg" width="806" height="537" />
+    <img src="https://c1.staticflickr.com/1/777/23481108881_9ab27db3c9_b.jpg" width="800" height="200" />
+    <img src="https://c2.staticflickr.com/6/5752/23269026110_bae9c4e3bc_b.jpg" width="800" height="250" /></h1>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <h1><img src="https://c2.staticflickr.com/6/5653/23539206496_c198dca42d.jpg" width="300" height="375"/>
+      
+    <img src="萬福2.png" width="380" height="475" /></h1>
+    <h1>&nbsp;</h1>
+    <p style="font-size:36px">關於萬福伯</p>
+    	<div id="intro">萬福伯小時候田裡只種植稻米和甘蔗，芒果的技術尚未發達，只有田裡零星幾棵高大年老的土芒果樹，是小孩子去放牛吃草時，爬上去休憩的好地方。後來稻米及甘蔗因不敵外國進口貨的競爭而逐漸淘汰，因此改種高經濟價值的農作物，轉而研究芒果的栽種技術，因此成為大家信賴的芒果達人喔。<br />
+    </p></div>
+    <h2>&nbsp;</h2>
+    <div>
+  	<p style="font-size:36px">芒果這裡買</p>
+    	<div class="photo"><img src="https://c2.staticflickr.com/6/5692/23270987480_9202fd645d.jpg" /></div>
+    	  <div class="word"><img src="https://c1.staticflickr.com/1/612/23567030195_9472c1e8f1.jpg" />
+          <br />
+          	萬福伯的土芒果每顆都經過套袋，如此一來可以避免果蠅叮咬，<br />而且堅持在欉紅不催熟，嚴格把關，讓大家吃得安心，不僅外觀<br />大又美，更是酸甜好吃！<br /><br />
+            快來這裡買↓
+          	<div class="styled-select slate">
+    	    <select name="mango">
+    	      <label>
+    	      請選擇規格
+    	      </label>
+    	      <option value="size1">20顆裝  </option>
+    	      <option value="size2">16顆裝  </option>
+    	      <option value="size3">12顆裝  </option>
+  	      </select>
+  	       </div>
+           </div>
+           </div>
+      <br /><br /><br /><br />
+      <div id="last">
+      <div class="button">
+     <button class="ui green basic button"><i class="in cart icon"></i>加入購物車</button></div></div>
     
 
-  <div class="footer">
-    <p>此 .footer 包含 position:relative 宣告；為 Internet Explorer 6 提供 .footer 的 hasLayout，並讓它能夠進行正確的清除作業。如果不需要支援 IE6，就可以加以移除。</p>
-    <!-- end .footer --></div>
+  <!-- end .content --></div>
   <!-- end .container --></div>
 </body>
 </html>
